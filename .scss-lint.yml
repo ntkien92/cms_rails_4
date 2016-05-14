@@ -1,0 +1,26 @@
+scss_files: 'app/assets/stylesheets/**/*.scss'
+
+linters:
+  # Definision
+  StringQuotes:
+    style: double_quotes
+  HexLength:
+    style: long
+  SelectorFormat:
+    enabled: true
+    convention: snake_case
+  BorderZero:
+    enabled: true
+    convention: none
+
+  # Giving up
+  SingleLinePerSelector:
+    enabled: false
+  EmptyLineBetweenBlocks:
+    enabled: false
+  NestingDepth:
+    enabled: false
+  SelectorDepth:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
