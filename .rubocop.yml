@@ -6,7 +6,8 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - 'bin/**/*'
-
+    - Capfile
+    - spec/spec_helper.rb
   Rails:
     Enabled: true
   DisplayCopNames: true
