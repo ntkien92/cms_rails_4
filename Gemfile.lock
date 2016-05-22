@@ -41,6 +41,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    adminlte2-rails (0.0.5)
     airbrussh (1.0.2)
       sshkit (>= 1.6.1, != 1.7.0)
     annotate (2.7.1)
@@ -543,6 +544,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-import
+  adminlte2-rails (~> 0.0.3)
   annotate
   awesome_print
   bootstrap-sass (~> 3.3.6)

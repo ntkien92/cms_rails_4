@@ -91,6 +91,9 @@ gem 'meta-tags'
 #### Gem Holiday Japan####
 gem 'holiday_jp'
 
+#### Gem admin-lte2 ####
+gem 'adminlte2-rails', '~> 0.0.3'
+
 group :development, :test do
   ##### Debugging #####
   gem 'awesome_print'
