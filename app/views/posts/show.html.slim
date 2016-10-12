@@ -1,0 +1,73 @@
+.single
+  .container
+    .single-top
+      / a[href="#"]
+        = image_tag 'single-1.jpg', class: 'img-responsive'
+      .single-grid
+        h4
+          = @post.title
+        ul.blog-ic
+          li
+            a[href="#"]
+              span
+                i.glyphicon.glyphicon-user
+                = @post.user.email
+          li
+            span
+              i.glyphicon.glyphicon-time
+              | June 14, 2013
+          li
+            span
+              i.glyphicon.glyphicon-eye-open
+              = "Views: #{@post.number_view}"
+        p
+          = @post.content.html_safe
+      .about-two
+        .fb-like[data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-share="true"]
+        a.twitter-share-button[href="https://twitter.com/intent/tweet"]
+          |  Tweet
+        / ul
+          li
+            p
+              | Share : 
+          li
+            a[href="#"]
+              span.fb
+          li
+            a[href="#"]
+              span.twit
+          / li
+          /   a[href="#"]
+          /     span.pin
+      .comments.heading
+        h3
+          | Comments
+        .fb-comments[data-href="www.google.com" data-numposts="5"]
+        / .media
+          .media-body
+            h4.media-heading
+              |  Richard Spark
+            p
+              | On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs . 
+          .media-right
+            a[href="#"]
+              = image_tag 'si.png'
+        / .media
+          .media-left
+            a[href="#"]
+              = image_tag 'si.png'
+          .media-body
+            h4.media-heading
+              | Joseph Goh
+            p
+              | On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs . 
+      / .comment-bottom.heading
+        h3
+          | Leave a Comment
+        form
+          input[type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}"]
+          input[type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}"]
+          input[type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}"]
+          textarea[cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}"]
+            | Message
+          input[type="submit" value="Send"]

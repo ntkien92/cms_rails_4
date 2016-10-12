@@ -1,0 +1,22 @@
+.box
+  .box-header.with-border
+    .row
+      .col-md-2
+        label
+          | Email
+      .col-md-10
+        = @contact.email
+    .row
+      .col-md-2
+        label
+          | Full Name
+      .col-md-10
+        = "#{@contact.firstname} #{@contact.lastname}"
+    .row
+      .col-md-2
+        label
+          | Content
+      .col-md-10
+        = @contact.description
+= link_to "Edit", edit_admin_contact_path(@contact), class: 'btn btn-primary'
+= link_to "Back", admin_contacts_path, class: 'btn btn-primary'

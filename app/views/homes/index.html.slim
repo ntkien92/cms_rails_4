@@ -1,0 +1,184 @@
+/ .banner
+  .container
+    .banner-top
+      .banner-text
+        h2
+          | Aliquam erat
+        h1
+          | Suspendisse potenti
+        .banner-btn
+          a[href="single.html"]
+            | Read More
+.about
+  .container
+    .about-main
+      .col-md-8.about-left
+        - if (params.blank? || params[:page].blank? || params[:page] == '1') && params[:q].blank?
+          .about-one
+            p
+              | Find The Most
+            h3
+              = link_to @post_recommend
+                = @post_recommend.title
+          .about-two
+            = link_to image_tag(@post_recommend.url_image), post_path(@post_recommend)
+            p
+              | Posted by 
+              a[href="#"]
+                = @post_recommend.user.try(:email)
+              |  on 10 feb, 2015 
+            p
+              = @post_recommend.content.html_safe
+            .about-btn
+              = link_to 'Read More', post_path(@post_recommend)
+            / ul
+              li
+                p
+                  | Share : 
+              li
+                a[href="#"]
+                  span.fb
+              li
+                a[href="#"]
+                  span.twit
+              li
+                a[href="#"]
+                  span.pin
+
+              / li
+              /   a[href="#"]
+              /     span.rss
+
+        .about-tre
+          .a-1
+            - @posts.each_with_index do |post, index|
+              .col-md-6.abt-left.show_post.col-sm-12
+                = link_to post_path(post)
+                  = image_tag(post.url_image)
+                h6
+                  | Find The Most
+                h3
+                  = link_to post.title, post_path(post)
+                p
+                  = truncate(post.description.html_safe, length: 200)
+                label
+                  = post.created_at
+                  / | May 29, 2015
+              - if index.odd?
+                .clearfix
+            .clearfix
+        .banner-btn.pull-left
+          = link_to_previous_page @posts, 'New Posts'
+        .banner-btn.pull-right
+          = link_to_next_page @posts, 'Old Posts'
+        .clearfix
+      .col-md-4.about-right.heading
+        .abt-1
+          h3
+            | ABOUT US
+          .abt-one
+            = image_tag "c-2.jpg"
+            p
+              | Quisque non tellus vitae mauris luctus aliquam sit amet id velit. Mauris ut dapibus nulla, a dictum neque.
+            .a-btn
+              a[href="single.html"]
+                | Read More
+        .abt-2
+          h3
+            | YOU MIGHT ALSO LIKE
+          - @post_most_view.each do |post|
+            .might-grid
+              .grid-might
+                = link_to post_path(post)
+                  = image_tag post.url_image, class: 'img-responsive'
+              .might-top
+                h4
+                  = link_to post_path(post)
+                    = truncate(post.title, length: 40)
+                p
+                  = truncate(post.description, length: 100)
+              .clearfix
+        .abt-2
+          h3
+            | ARCHIVES
+          ul
+            - @quotes.each do |quote|
+              li
+                p
+                  = quote.content
+            / li
+            /   a[href="single.html"]
+            /     | Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            / li
+            /   a[href="single.html"]
+            /     | Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            / li
+            /   a[href="single.html"]
+            /     | When an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            / li
+            /   a[href="single.html"]
+            /     | It has survived not only five centuries, but also the leap into electronic typesetting
+            / li
+            /   a[href="single.html"]
+            /     | Remaining essentially unchanged. It was popularised in the 1960s with the release of 
+            / li
+            /   a[href="single.html"]
+            /     | Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+            / li
+            /   a[href="single.html"]
+            /     | Software like Aldus PageMaker including versionsof Lorem Ipsum.
+        .abt-2
+          h3
+            | NEWS LETTER
+          .news
+            form
+              input[type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"]
+              input[type="submit" value="Subscribe"]
+      .clearfix
+.slide
+  .container
+    .fle-xsel
+      ul#flexiselDemo3
+        - @post_random.each do |post|
+          li
+            = link_to post_path(post)
+              .banner-1
+                = image_tag post.url_image, class: 'img-responsive', title: post.title
+        / - 6.times do |i|
+          li
+            a[href="#"]
+              .banner-1
+                = image_tag "s-#{i+1}.jpg", class: 'img-responsive'
+        / li
+        /   a[href="#"]
+
+        /   .banner-1
+        /     = image_tag "s-1.jpg", class: 'img-responsive'
+        / li
+        /   a[href="#"]
+
+        /   .banner-1
+        /     = image_tag "s-2.jpg", class: 'img-responsive'
+        / li
+        /   a[href="#"]
+
+        /   .banner-1
+        /     = image_tag "s-3.jpg", class: 'img-responsive'
+        / li
+        /   a[href="#"]
+
+        /   .banner-1
+        /     = image_tag "s-4.jpg", class: 'img-responsive'
+        / li
+        /   a[href="#"]
+
+        /   .banner-1
+        /     = image_tag "s-5.jpg", class: 'img-responsive'
+        / li
+        /   a[href="#"]
+
+        /   .banner-1
+        /     = image_tag "s-6.jpg", class: 'img-responsive'
+      / script[type="text/javascript"]
+        |  $(window).load(function() { $("#flexiselDemo3").flexisel({ visibleItems: 5, animationSpeed: 1000, autoPlay: true, autoPlaySpeed: 3000, pauseOnHover: true, enableResponsiveBreakpoints: true, responsiveBreakpoints: { portrait: { changePoint:480, visibleItems: 2 }, landscape: { changePoint:640, visibleItems: 3 }, tablet: { changePoint:768, visibleItems: 3 } } }); }); 
+      .clearfix

@@ -1,0 +1,59 @@
+.box
+  .box-header.with-border
+    .row
+      .col-md-2
+        label
+          | Title
+      .col-md-10
+        = @post.title
+  .box-body.with-border
+    .row
+      .col-md-2
+        label
+          | Author
+      .col-md-10
+        = @post.user_email
+  .box-body.with-border
+    .row
+      .col-md-2
+        label
+          | Description
+      .col-md-10
+        = @post.description
+  .box-body.with-border
+    .row
+      .col-md-2
+        label
+          | Category
+      .col-md-10
+        = @post.category_name
+  .box-body.with-border
+    .row
+      .col-md-2
+        label
+          | Content
+      .col-md-10
+        = @post.content.html_safe
+  .box-body.with-border
+    .row
+      .col-md-2
+        label
+          | Recommend
+      .col-md-10
+        = @post.decorate.show_recommend
+  .box-body.with-border
+    .row
+      .col-md-2
+        label
+          | Images
+      .col-md-10
+        = image_tag @post.url_image
+  .box-body.with-border
+    .row
+      .col-md-2
+        label
+          | Recommend
+      .col-md-10
+        = @post.decorate.show_public
+= link_to "Edit", edit_admin_post_path(@post), class: 'btn btn-primary'
+= link_to "Back", admin_posts_path, class: 'btn btn-primary'

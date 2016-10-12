@@ -1,0 +1,39 @@
+.row
+  = render 'search'
+  .col-xs-12
+    .box
+      .box-header
+        h3
+          | Category
+      .box-body
+        table#example2.table.table-bordered.table-hover
+          thead
+            tr
+              = content_tag :th, sort_link(@q, :id, t(".id"), default_order: :asc)
+              = content_tag :th, sort_link(@q, :name, t(".name"), default_order: :asc)
+              th
+                | Number Posts
+              th
+          tbody
+            - @categories.each do |category|
+              tr
+                td
+                  = category.id
+                td
+                  = category.name
+                td
+                  = category.posts.count
+                td.col-sm-3
+                  .col-sm-4
+                    = link_to 'Edit', edit_admin_category_path(category), class: 'btn btn-primary'
+                  .col-sm-4
+                    = link_to 'Delete', admin_category_path(category), {:method => :delete, :class=>"btn btn-danger", :type=>"button" , data: { confirm: "Are you sure?" }}
+.row
+  .col-sm-5
+    = page_entries_info @categories, entry_name: ''
+  .col-sm-7
+    .dataTables_paginate.paging_simple_numbers.pull-right
+      = paginate @categories, theme: 'admin'
+.row
+  .col-xs-12
+    = link_to "Create", new_admin_category_path, class: 'btn btn-primary'

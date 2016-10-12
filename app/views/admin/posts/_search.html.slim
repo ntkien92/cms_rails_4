@@ -1,0 +1,33 @@
+.col-xs-12
+  .box.box-warning
+    .box-header.with-border
+      h3.box-title
+        | Search
+    =search_form_for @q, url: admin_posts_path, class: 'form-horizontal' do |f|
+      .box-body
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Title
+            .col-sm-9
+              = f.text_field :title_cont, class: 'form-control'
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Number Views
+            .col-sm-9
+              .col-sm-4
+                = f.number_field :number_view_gteq, class: 'form-control'
+              .col-sm-1
+                | -
+              .col-sm-4
+                = f.number_field :number_view_lteq, class: 'form-control'
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Category
+            .col-sm-9
+              = f.select :category_id_eq, Category.all.collect { |c| [ c.name, c.id ] }, { include_blank: true }, { class: 'form-control' }
+      .box-footer
+        button.btn.btn-info.pull-left
+          | Search

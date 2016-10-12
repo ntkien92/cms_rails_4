@@ -19,15 +19,25 @@ aside.main-sidebar
       li.header
         | HEADER
       li.active
-        a[href="#"]
+        = link_to admin_categories_path
           i.fa.fa-link
           span
-            | Link
+            | Categories
       li
-        a[href="#"]
+        = link_to admin_posts_path
           i.fa.fa-link
           span
-            | Another Link
+            | Posts
+      li
+        = link_to admin_quotes_path
+          i.fa.fa-link
+          span
+            | Quotes
+      li
+        = link_to admin_contacts_path
+          i.fa.fa-link
+          span
+            | Contacts
       li.treeview
         a[href="#"]
           i.fa.fa-link
