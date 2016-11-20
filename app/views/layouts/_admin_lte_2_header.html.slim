@@ -82,12 +82,12 @@ header.main-header
                 | View all tasks
         li.dropdown.user.user-menu
           a.dropdown-toggle[href="#" data-toggle="dropdown"]
-            img.user-image[src="/assets/user2-160x160.jpg" alt="User Image"]
+            = image_tag gravatar_url(current_user.email, 160), class: 'user-image'
             span.hidden-xs
               | Alexander Pierce
           ul.dropdown-menu
             li.user-header
-              img.img-circle[src="/assets/user2-160x160.jpg" alt="User Image"]
+              = image_tag gravatar_url(current_user.email, 160), class: 'img-circle'
               p
                 |  Alexander Pierce - Web Developer
                 small
@@ -107,7 +107,7 @@ header.main-header
                 a.btn.btn-default.btn-flat[href="#"]
                   | Profile
               .pull-right
-                a.btn.btn-default.btn-flat[href="#"]
+                = link_to destroy_user_session_path, { class: 'btn btn-default btn-flat', method: :delete }
                   | Sign out
         li
           a[href="#" data-toggle="control-sidebar"]

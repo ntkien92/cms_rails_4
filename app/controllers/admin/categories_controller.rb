@@ -40,7 +40,6 @@ class Admin::CategoriesController < AdminController
   private
 
     def load_service
-      current_user = User.first
       @service = Admin::CategoryService.new(current_user, params)
     end
 end

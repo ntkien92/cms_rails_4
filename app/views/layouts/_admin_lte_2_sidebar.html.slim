@@ -2,7 +2,7 @@ aside.main-sidebar
   section.sidebar
     .user-panel
       .pull-left.image
-        img.img-circle[src="/assets/user2-160x160.jpg" alt="User Image"]
+        = image_tag gravatar_url(current_user.email, 160), class: 'img-circle'
       .pull-left.info
         p
           | Alexander Pierce
@@ -38,6 +38,11 @@ aside.main-sidebar
           i.fa.fa-link
           span
             | Contacts
+      li
+        = link_to admin_contacts_path
+          i.fa.fa-link
+          span
+            | Users
       li.treeview
         a[href="#"]
           i.fa.fa-link

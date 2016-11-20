@@ -44,7 +44,6 @@ class Admin::PostsController < AdminController
   private
 
     def load_service
-      current_user = User.first
       @service = Admin::PostService.new(current_user, params)
     end
 end

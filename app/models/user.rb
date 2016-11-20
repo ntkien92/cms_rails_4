@@ -24,4 +24,6 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :categories
   has_one :user_detail
+
+  accepts_nested_attributes_for :user_detail, allow_destroy: true
 end
