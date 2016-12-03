@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :homes, only: [:index]
   resources :contacts, only: [:index, :create]
   resources :category, only: [:index, :show]
+  resources :abouts, only: [:index]
   resources :static_pages do
     collection do
       get 'single'

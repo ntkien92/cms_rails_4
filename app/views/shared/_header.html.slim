@@ -1,4 +1,4 @@
-- if controller_name == 'homes'
+/ - if controller_name == 'homes'
   .header-top
     .container
       .head-main
@@ -11,18 +11,17 @@
         span.menu
         ul.navig
           li
-            = link_to t('header.home'), root_path, class: 'active'
+            = link_to t('header.home'), root_path, class: (active_menu('homes', controller_name))
+          / li
+            = link_to t('header.about'), abouts_path, class: (active_menu('abouts', controller_name))
           li
-            a[href="#"]
-              | About
-          li
-            = link_to t('header.gallery'), category_index_path
+            = link_to t('header.gallery'), category_index_path, class: (active_menu('category', controller_name))
           - if @menus
             - @menus.each do |menu|
               li
-                = link_to menu.name, menu
+                = link_to menu.name, menu, class: (active_menu("category_#{menu.slug}", "#{controller_name}_#{menu.slug}"))
           li
-            = link_to t('header.contact'), contacts_path
+            = link_to t('header.contact'), contacts_path, class: (active_menu('contacts', controller_name))
       .header-right
         .search-bar
           = search_form_for @q, url: root_path do |f|

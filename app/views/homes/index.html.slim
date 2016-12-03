@@ -26,7 +26,7 @@
               | Posted by 
               a[href="#"]
                 = @post_recommend.user.try(:email)
-              |  on 10 feb, 2015 
+              = " #{convert_date @post_recommend.created_at}"
             p
               = @post_recommend.content.html_safe
             .about-btn
@@ -62,7 +62,7 @@
                 p
                   = truncate(post.description.html_safe, length: 200)
                 label
-                  = post.created_at
+                  = convert_date post.created_at
                   / | May 29, 2015
               - if index.odd?
                 .clearfix
@@ -81,7 +81,7 @@
             p
               | Quisque non tellus vitae mauris luctus aliquam sit amet id velit. Mauris ut dapibus nulla, a dictum neque.
             .a-btn
-              a[href="single.html"]
+              a[href="#"]
                 | Read More
         .abt-2
           h3

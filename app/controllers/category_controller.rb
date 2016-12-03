@@ -6,7 +6,7 @@ class CategoryController < ApplicationController
   end
 
   def show
-    @posts = @service.posts
+    @posts = @service.posts.page(params[:page])
   end
 
   private

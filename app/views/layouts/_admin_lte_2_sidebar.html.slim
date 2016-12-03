@@ -5,7 +5,7 @@ aside.main-sidebar
         = image_tag gravatar_url(current_user.email, 160), class: 'img-circle'
       .pull-left.info
         p
-          | Alexander Pierce
+          = current_user.email
         a[href="#"]
           i.fa.fa-circle.text-success
           |  Online
@@ -18,27 +18,27 @@ aside.main-sidebar
     ul.sidebar-menu
       li.header
         | HEADER
-      li.active
+      li class=(active_menu('categories', controller_name))
         = link_to admin_categories_path
           i.fa.fa-link
           span
             | Categories
-      li
+      li class=(active_menu('posts', controller_name))
         = link_to admin_posts_path
           i.fa.fa-link
           span
             | Posts
-      li
+      li class=(active_menu('quotes', controller_name))
         = link_to admin_quotes_path
           i.fa.fa-link
           span
             | Quotes
-      li
+      li class=(active_menu('contacts', controller_name))
         = link_to admin_contacts_path
           i.fa.fa-link
           span
             | Contacts
-      li
+      li class=(active_menu('users', controller_name))
         = link_to admin_contacts_path
           i.fa.fa-link
           span

@@ -15,10 +15,12 @@
             li
               span
                 i.glyphicon.glyphicon-time
-                | June 14, 2013
+                / | June 14, 2013
+                = post.created_at
             li
               span
                 i.glyphicon.glyphicon-eye-open
                 = "Views: #{post.number_view}"
           p
             = post.description
+    = paginate @posts
