@@ -1,0 +1,16 @@
+.box-body
+  = render 'admin/shared/errors', object: @quote
+  .form-group
+    .row
+      .col-md-2
+        = f.label :author
+      .col-md-4
+        = f.text_field :author, class: 'form-control'
+  .form-group
+    .row
+      .col-md-2
+        = f.label :content
+      .col-md-4
+        = f.text_area :content, class: 'form-control'
+  = f.submit 'Save', class: 'btn btn-primary'
+  = link_to "Back", admin_categories_path, class: 'btn btn-primary'

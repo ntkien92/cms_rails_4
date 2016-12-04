@@ -1,0 +1,58 @@
+aside.main-sidebar
+  section.sidebar
+    .user-panel
+      .pull-left.image
+        = image_tag gravatar_url(current_user.email, 160), class: 'img-circle'
+      .pull-left.info
+        p
+          = current_user.email
+        a[href="#"]
+          i.fa.fa-circle.text-success
+          |  Online
+    form.sidebar-form[action="#" method="get"]
+      .input-group
+        input.form-control[type="text" name="q" placeholder="Search..."]
+        span.input-group-btn
+          button#search-btn.btn.btn-flat[type="submit" name="search"]
+            i.fa.fa-search
+    ul.sidebar-menu
+      li.header
+        | HEADER
+      li class=(active_menu('categories', controller_name))
+        = link_to admin_categories_path
+          i.fa.fa-link
+          span
+            | Categories
+      li class=(active_menu('posts', controller_name))
+        = link_to admin_posts_path
+          i.fa.fa-link
+          span
+            | Posts
+      li class=(active_menu('quotes', controller_name))
+        = link_to admin_quotes_path
+          i.fa.fa-link
+          span
+            | Quotes
+      li class=(active_menu('contacts', controller_name))
+        = link_to admin_contacts_path
+          i.fa.fa-link
+          span
+            | Contacts
+      li class=(active_menu('users', controller_name))
+        = link_to admin_contacts_path
+          i.fa.fa-link
+          span
+            | Users
+      li.treeview
+        a[href="#"]
+          i.fa.fa-link
+          span
+            | Multilevel
+          i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a[href="#"]
+              | Link in level 2
+          li
+            a[href="#"]
+              | Link in level 2

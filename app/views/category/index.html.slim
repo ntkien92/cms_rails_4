@@ -1,0 +1,75 @@
+.category
+  - @categories.each do |category|
+    .container
+      .gallery-top.heading
+        = link_to category_path(category)
+          h3
+            = category.name
+      section
+        ul#da-thumbs.da-thumbs
+          - category.posts.take(6).each_with_index do |post, index|
+            li
+              = link_to post_path(post)
+                = image_tag post.url_image
+                div
+                  h5
+                    = post.title
+                  span
+                    = post.description
+            - if index.modulo(3) == 2
+              .clearfix
+        .clearfix
+      .read_more
+        .about-btn
+          = link_to 'Read More', category_path(category)
+      .clearfix
+/ .gallery
+  .container
+    .gallery-top.heading
+      h3
+        | OUR GALLERY
+    section
+      ul#da-thumbs.da-thumbs
+        li
+          = link_to "#{image_tag('g-1.jpg')} <div><h5>Coffee</h5><span>non suscipit leo fringilla non suscipit leo fringilla molestie</span></div>".html_safe, root_path, class: 'b-link-stripe b-animate-go thickbox'
+        li
+          a.b-link-stripe.b-animate-go.thickbox[href="images/g-2.jpg" rel="title"]
+            = image_tag 'g-1.jpg'
+            div
+              h5
+                | Coffee
+              span
+                | non suscipit leo fringilla non suscipit leo fringilla molestie
+        li
+          a.b-link-stripe.b-animate-go.thickbox[href="images/g-3.jpg" rel="title"]
+            = image_tag 'g-1.jpg'
+            div
+              h5
+                | Coffee
+              span
+                | non suscipit leo fringilla non suscipit leo fringilla molestie
+        li
+          a.b-link-stripe.b-animate-go.thickbox[href="images/g-4.jpg" rel="title"]
+            = image_tag 'g-1.jpg'
+            div
+              h5
+                | Coffee
+              span
+                | non suscipit leo fringilla non suscipit leo fringilla molestie
+        li
+          a.b-link-stripe.b-animate-go.thickbox[href="images/g-5.jpg" rel="title"]
+            = image_tag 'g-1.jpg'
+            div
+              h5
+                | Coffee
+              span
+                | non suscipit leo fringilla non suscipit leo fringilla molestie
+        li
+          a.b-link-stripe.b-animate-go.thickbox[href="images/g-6.jpg" rel="title"]
+            = image_tag 'g-1.jpg'
+            div
+              h5
+                | Coffee
+              span
+                | non suscipit leo fringilla non suscipit leo fringilla molestie
+      .clearfix

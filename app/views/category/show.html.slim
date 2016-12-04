@@ -1,0 +1,26 @@
+.single
+  .container
+    .single-top
+      - @posts.each do |post|
+        .single-grid
+          h3
+            = link_to post
+              = post.title
+          ul.blog-ic
+            li
+              a[href="#"]
+                span
+                  i.glyphicon.glyphicon-user
+                  = post.user.try(:email)
+            li
+              span
+                i.glyphicon.glyphicon-time
+                / | June 14, 2013
+                = post.created_at
+            li
+              span
+                i.glyphicon.glyphicon-eye-open
+                = "Views: #{post.number_view}"
+          p
+            = post.description
+    = paginate @posts

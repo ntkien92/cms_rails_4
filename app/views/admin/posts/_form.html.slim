@@ -1,0 +1,45 @@
+.box-body
+  = render 'admin/shared/errors', object: @post
+  .form-group
+    = f.label :title
+    .row
+      .col-md-6
+        = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: 'form-control'
+  .form-group
+    = f.label :category
+    .row
+      .col-md-4
+        = f.select :category_id, Category.all.collect { |c| [ c.name, c.id ] }, { include_blank: true }, { class: 'form-control' }
+  .form-group
+    = f.label :content
+    = cktext_area :post, :content, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}
+  .form-group
+    = f.label :image
+    = f.text_field :url_image, class: 'form-control'
+  .form-group
+    .row
+      .col-md-1
+        = f.label :recommend
+      .col-md-4
+        = f.radio_button :recommend, true
+        label
+          | Yes
+        = f.radio_button :recommend, false
+        label
+          | No
+  .form-group
+    .row
+      .col-md-1
+        = f.label :public
+      .col-md-4
+        = f.radio_button :public, true
+        label
+          | Yes
+        = f.radio_button :public, false
+        label
+          | No
+  = f.submit 'Save', class: 'btn btn-primary'
+  = link_to "Back", admin_posts_path, class: 'btn btn-primary'

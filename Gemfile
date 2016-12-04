@@ -91,6 +91,15 @@ gem 'meta-tags'
 #### Gem Holiday Japan####
 gem 'holiday_jp'
 
+#### Gem admin-lte2 ####
+gem 'adminlte2-rails', '~> 0.0.3'
+
+#### Gem ckeditor ####
+gem 'ckeditor'
+
+### Decorate
+gem 'draper'
+
 group :development, :test do
   ##### Debugging #####
   gem 'awesome_print'
@@ -99,7 +108,7 @@ group :development, :test do
   gem 'letter_opener_web'
   gem 'annotate'
   gem 'quiet_assets'
-
+  gem 'bullet'
   ##### Testing #####
   gem 'rspec-rails'
 end

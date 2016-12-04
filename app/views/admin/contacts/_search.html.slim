@@ -1,0 +1,40 @@
+.col-xs-12
+  .box.box-warning
+    .box-header.with-border
+      h3.box-title
+        | Search
+    =search_form_for @q, url: admin_contacts_path, class: 'form-horizontal' do |f|
+      .box-body
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Id
+            .col-sm-9
+              = f.number_field :id_eq, class: 'form-control'
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Email
+            .col-sm-9
+              = f.text_field :email_cont, class: 'form-control'
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | First Name
+            .col-sm-9
+              = f.text_field :firstname_cont, class: 'form-control'
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Description
+            .col-sm-9
+              = f.text_field :description_cont, class: 'form-control'
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Category
+            .col-sm-9
+              = f.select :read_eq, [['Read', true], ['Unread', false]], { include_blank: true }, { class: 'form-control' }
+      .box-footer
+        button.btn.btn-info.pull-left
+          | Search

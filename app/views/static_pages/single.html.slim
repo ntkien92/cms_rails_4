@@ -1,0 +1,60 @@
+.single
+  .container
+    .single-top
+      a[href="#"]
+        = image_tag 'single-1.jpg', class: 'img-responsive'
+      .single-grid
+        h4
+          | SED LOREET ALIQUAM LEOTELLUS DOLOR DAPIBUS
+        ul.blog-ic
+          li
+            a[href="#"]
+              span
+                i.glyphicon.glyphicon-user
+
+                | Super user
+          li
+            span
+              i.glyphicon.glyphicon-time
+
+              | June 14, 2013
+          li
+            span
+              i.glyphicon.glyphicon-eye-open
+
+              | Hits:145
+        p
+          | Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo, in ven e natis purus pretium sit amet. Praesent lectus tortor, tincidu nt in consectetur vestibulum, ultrices nec neque. Praesent nec sagittis mauris. Fusce convallis nunc neque. Integer egestas aliquam interdum. Nulla ante diam, interdum nec tempus eu, feugiat vel erat. Integer aliquam mi quis accum san porta. Quisque nec turpis nisi. Proin lobortis nisl ut orci euismod, et lobortis est scelerisque. Sed eget volutpat ipsum. Integer fring illa leo porttitor, ultrices quam non, lobortis ligula. Aliquam vel consequat arcu.
+        p
+          | On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish.
+      .comments.heading
+        h3
+          | Comments
+        / .media
+          .media-body
+            h4.media-heading
+              |  Richard Spark
+            p
+              | On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs . 
+          .media-right
+            a[href="#"]
+              = image_tag 'si.png'
+        / .media
+          .media-left
+            a[href="#"]
+              = image_tag 'si.png'
+          .media-body
+            h4.media-heading
+              | Joseph Goh
+            p
+              | On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs . 
+      / .comment-bottom.heading
+        h3
+          | Leave a Comment
+        form
+          input[type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}"]
+          input[type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}"]
+          input[type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}"]
+          textarea[cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}"]
+            | Message
+          input[type="submit" value="Send"]

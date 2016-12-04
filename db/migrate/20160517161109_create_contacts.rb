@@ -5,6 +5,7 @@ class CreateContacts < ActiveRecord::Migration
       t.string :lastname
       t.string :firstname
       t.text :description
+      t.boolean :read
 
       t.timestamps null: false
     end

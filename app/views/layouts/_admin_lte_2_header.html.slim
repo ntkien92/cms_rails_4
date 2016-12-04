@@ -1,0 +1,63 @@
+header.main-header
+  = link_to admin_categories_path, class: 'logo'
+    span.logo-mini
+      b
+        | K
+      | NT
+    span.logo-lg
+      b
+        | Kien
+      | NguyenTrung
+  nav.navbar.navbar-static-top[role="navigation"]
+    a.sidebar-toggle[href="#" data-toggle="offcanvas" role="button"]
+      span.sr-only
+        | Toggle navigation
+    .navbar-custom-menu
+      ul.nav.navbar-nav
+        li.dropdown.messages-menu
+          = link_to admin_contacts_path
+            i.fa.fa-envelope-o
+            span.label.label-success
+              | 4
+        li.dropdown.notifications-menu
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.fa.fa-bell-o
+            span.label.label-warning
+              | 0
+        li.dropdown.tasks-menu
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.fa.fa-flag-o
+            span.label.label-danger
+              | 0
+        li.dropdown.user.user-menu
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            = image_tag gravatar_url(current_user.email, 160), class: 'user-image'
+            span.hidden-xs
+              = current_user.email
+          ul.dropdown-menu
+            li.user-header
+              = image_tag gravatar_url(current_user.email, 160), class: 'img-circle'
+              p
+                |  Alexander Pierce - Web Developer
+                small
+                  | Member since Nov. 2012
+            li.user-body
+              .col-xs-4.text-center
+                a[href="#"]
+                  | Followers
+              .col-xs-4.text-center
+                a[href="#"]
+                  | Sales
+              .col-xs-4.text-center
+                a[href="#"]
+                  | Friends
+            li.user-footer
+              .pull-left
+                a.btn.btn-default.btn-flat[href="#"]
+                  | Profile
+              .pull-right
+                = link_to destroy_user_session_path, { class: 'btn btn-default btn-flat', method: :delete }
+                  | Sign out
+        li
+          a[href="#" data-toggle="control-sidebar"]
+            i.fa.fa-gears

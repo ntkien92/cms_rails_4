@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  header:
+    home: Home
+    contact: Contact
+    ruby_on_rails: Ruby on Rails
+    gallery: Gallery
+    about: About
+

@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require File.dirname(__FILE__) + '/seeds/user'
+require File.dirname(__FILE__) + '/seeds/category'
+require File.dirname(__FILE__) + '/seeds/post'
+require File.dirname(__FILE__) + '/seeds/quote'
+require File.dirname(__FILE__) + '/seeds/contact'

@@ -1,0 +1,16 @@
+.col-xs-12
+  .box.box-warning
+    .box-header.with-border
+      h3.box-title
+        | Search
+    =search_form_for @q, url: admin_categories_path, class: 'form-horizontal' do |f|
+      .box-body
+        .col-md-6
+          .form-group
+            label.col-sm-3.control-label
+              | Name
+            .col-sm-9
+              = f.text_field :name_cont, class: 'form-control'
+      .box-footer
+        button.btn.btn-info.pull-left
+          | Search
