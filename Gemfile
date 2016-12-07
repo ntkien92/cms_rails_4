@@ -82,14 +82,8 @@ gem 'qr4r'
 ##### CopyToClipBoard #####
 gem 'zeroclipboard-rails'
 
-#### Download file zip ####
-gem 'rubyzip'
-
 #### Metatags #####
 gem 'meta-tags'
-
-#### Gem Holiday Japan####
-gem 'holiday_jp'
 
 #### Gem admin-lte2 ####
 gem 'adminlte2-rails', '~> 0.0.3'
@@ -99,6 +93,8 @@ gem 'ckeditor'
 
 ### Decorate
 gem 'draper'
+
+gem 'web-console', '~> 2.0'
 
 group :development, :test do
   ##### Debugging #####
