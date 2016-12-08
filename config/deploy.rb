@@ -4,7 +4,7 @@ lock '3.5.0'
 set :application, 'kien_app'
 set :repo_url, 'git@github.com:ntkien92/cms_rails_4.git'
 set :branch, 'develop'
-set :deploy_to, '/home/kien_app'
+set :deploy_to, '/home/kiennt/kien_app'
 set :scm, :git
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
