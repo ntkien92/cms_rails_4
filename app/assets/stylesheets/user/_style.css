@@ -6,11 +6,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 @font-face {
     font-family: 'RobotoSlab-Regular';
-    src:url(RobotoSlab-Regular.ttf) format('truetype');
+    src:url(robotoslab-regular.ttf) format('truetype');
 }
 @font-face {
     font-family: 'Raleway-Regular';
-    src:url(Raleway-Regular.ttf) format('truetype');
+    src:url(raleway-regular.ttf) format('truetype');
 }
 html, body{
     font-size: 100%;
