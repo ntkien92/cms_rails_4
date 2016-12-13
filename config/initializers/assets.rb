@@ -4,8 +4,8 @@
 Rails.application.config.assets.version = '1.0'
 
 # Add additional assets to the asset load path
-Rails.application.config.assets.paths << Rails.root.join('fonts')
+Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( admin.css admin.js /\.(?:svg|eot|woff|ttf)$/)
+Rails.application.config.assets.precompile += %w( admin.css admin.js application.js application.css /\.(?:svg|eot|woff|ttf)$/)
