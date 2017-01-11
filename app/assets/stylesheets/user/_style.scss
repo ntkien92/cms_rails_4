@@ -5,12 +5,16 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 @font-face {
-    font-family: 'RobotoSlab-Regular';
-    src: font-url("robotoslab-regular.ttf") format('truetype');
+  font-family: 'RobotoSlab-Regular';
+  src: font-url("robotoslab-regular.ttf") format('truetype');
 }
 @font-face {
-    font-family: 'Raleway-Regular';
-    src: font-url("raleway-regular.ttf") format('truetype');
+  font-family: 'Glyphicons Halflings';
+  src: font-url("glyphicons-halflings-regular.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: font-url("raleway-regular.ttf") format('truetype');
 }
 html, body{
     font-size: 100%;
@@ -979,8 +983,8 @@ i.glyphicon{
 }
 ul.blog-ic li  span{
 	font-size: 14px;
-    font-family: 'Raleway-Regular';
-    color: #999;
+  font-family: 'Raleway-Regular';
+  color: #999;
 }
 ul.blog-ic li a:hover{
 	color:#190608;
